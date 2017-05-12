@@ -1,0 +1,17 @@
+-------------------------------------------------------------------------------
+Test set: no.homo.AppTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 2.475 sec <<< FAILURE! - in no.homo.AppTest
+unitTest(no.homo.AppTest)  Time elapsed: 0.031 sec  <<< ERROR!
+org.jooby.Err: Not Found(404): /
+	at no.homo.AppTest.unitTest(AppTest.java:37)
+
+integrationTest(no.homo.AppTest)  Time elapsed: 1.118 sec  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Response body doesn't match expectation.
+Expected: "Hello World!"
+  Actual: hey jooby
+
+	at no.homo.AppTest.integrationTest(AppTest.java:29)
+
