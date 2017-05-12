@@ -28,7 +28,6 @@ public class Message {
     public Message(String content, User author) {
         this.content = content;
         this.author = author;
-        DataBaas.getInstance().addMessage(this);
     }
 
     public String getContent() {

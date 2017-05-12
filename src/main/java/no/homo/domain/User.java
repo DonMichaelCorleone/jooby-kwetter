@@ -15,6 +15,7 @@
  */
 package no.homo.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -27,12 +28,10 @@ public class User {
     private String password;
     private List<User> following;
 
-    public User(String userName, String password, List<User> following) {
+    public User(String userName, String password) {
         this.userName = userName;
         this.password = password;
-        this.following = following;
-        DataBaas.getInstance().addUser(this);
-        
+        this.following = new ArrayList<>();
     }
 
     public String getUserName() {

@@ -15,6 +15,7 @@
  */
 package no.homo.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Singleton;
 
@@ -25,8 +26,8 @@ import javax.inject.Singleton;
 @Singleton
 public class DataBaas {
 
-    private List<User> users;
-    private List<Message> messages;
+    private List<User> users = new ArrayList<>();
+    private List<Message> messages = new ArrayList<>();
     private static DataBaas instance = null;
 
     protected DataBaas() {
