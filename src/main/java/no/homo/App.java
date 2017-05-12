@@ -26,17 +26,17 @@ public class App extends Jooby {
         get("/login", req -> {
             String userName = req.param("username").value();
             String password = req.param("password").value();
+            User u = null;
+            Session session;
             for (User user : DataBaas.getInstance().getUsers()) {
-                
+                if (user.getUserName() == userName && user.getPassword() == password) {
+                    u = user;
+                    break;
+                }
             }
-            
-            Session session = req.session();
-
-            // set attribute
-            session.set("foo", "bar");
-
-            // get attribute
-            return session.get("foo").value();
+            session = req.session();
+            session.set(u.getUserName(), u.getPassword());
+            return session.get(userName).value();
         });
     }
 
